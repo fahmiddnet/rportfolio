@@ -7,10 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#112D4E',
-        secondary: '#DBE2EF',
-        primary_bg: '#F9F7F7',
-        color_blue: '#3F72AF'
+        primary: '#000957',
+        secondary: '#FFEB00',
       }
     },
   },
@@ -28,7 +26,7 @@ export default {
         '.text-stroke-primary':{
           '-webkit-text-stroke-color':theme('colors.primary'),
         },
-        '.dark.text-stroke-secondary':{
+        '.dark .text-stroke-secondary':{
           '-webkit-text-stroke-color':theme('colors.secondary'),
         },
       };

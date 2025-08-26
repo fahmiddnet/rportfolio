@@ -1,6 +1,6 @@
 <template>
     <header>
-        <div class="flex justify-between items-center p-8 ig:px-12 relative z-20">
+        <div class="flex justify-between items-center p-8 lg:px-12 relative z-20">
             <div class="text-3xl font-bold dark:text-white">LOGO</div>
 
             <!-- Mobile Toggle Button  -->
@@ -51,6 +51,7 @@ import { ref } from 'vue';
 const isMenuOpen = ref(false);
 
 const Menu = ref([
+    { name: 'Home', href: '/' },
     { name: 'Services', href: '#services' },
     { name: 'Skills', href: '#skills' },
     { name: 'Why Me', href: '#whyme' },

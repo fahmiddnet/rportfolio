@@ -18,10 +18,34 @@
                     explicabo doloribus possimus laborum, asperiores deserunt eaque!
                 </p>
                 <div class="mt-6 flex justify-center lg:justify-start">
-                    <Button label="Hire Me"/>
+                    <Button label="Hire Me" />
+                    <a href="" class="font-semibold text-lg w-[10rem] h-[55px] dark:text-secondary
+                        rounded-full ml-2 border-2 dark:border-secondary hover:scale-105 bg-white dark:bg-transparent
+                        flex justify-center items-center text-primary border-primary">
+                        <Icon icon="line-md:download-loop" class="text-3xl" />
+                        <span class="ml-1">Resume</span>
+                    </a>
                 </div>
             </header>
+            <aside class="container flex justify-center ig:justify-end mt-20 lg:mt-0 items-center flex-wrap">
+                <figure class="card relative -[30px] md:w-[420px] md:h-[420px] md:before:w-[450px]
+                md:before:h-[450px] w-[280px] h-[350px] before:w-[300px] before:h-[300px] before:border-[25px]
+                before:border-primary before:shadow-[7px_7px_21px_secondary,_-7px_-7px_21px_secondary]">
+                    <div class="relative w-full h-full bg-cover transform translate-x-[10px] translate-y-[10px]">
+                        <img src="@/assets/images/hero-img.jpg" alt="Hero picture" class="max-w-1/2" loading="lazy">
+                    </div>
+                </figure>
+            </aside>
         </main>
+
+        <svg class="hidden">
+            <filter id="wavyl">
+                <feTurbulence x="0" y="0" beseFrequency="0.2" numOctaves="5" seed="1">
+                    <feDisplacementMap in="SourceGraphic" scale="30" />
+                </feTurbulence>
+            </filter>
+        </svg>
+
     </section>
 </template>
 
@@ -33,4 +57,19 @@ import Button from '@/components/UI/Button.vue'
 </script>
 
 
-<style setup></style>
+<style scoped>
+
+.container .card:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: transparent;
+}
+
+.container .card:nth-of-type(1)::before{
+    filter:url(#wavyl);
+}
+
+</style>

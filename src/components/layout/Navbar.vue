@@ -26,20 +26,21 @@
                 <ul class="flex flex-col item-center space-y-5 md:flex-row md:space-x-5 md:space-y-0">
                     <li v-for="item in Menu" :key="item.name">
                         <a :href="item.href" class="block transition ease-linear md:text-lg lg:text-xl font-bold 
-                        text-white md:text-primary hover:text-color_blue dark:text-white 
-                        dark:hover:text-color_blue" @click="scrollToSection(item.href)">
+                        text-white md:text-primary hover:text-secondary dark:text-white 
+                        dark:hover:text-secondary" @click="scrollToSection(item.href)">
                             {{ item.name }}
                         </a>
                     </li>
                 </ul>
+                
+                <button @click="toggleDarkMode" class="text-white ml-20 z-10 hidden md:block">
+                    <!-- Show moon icon if dark mode is off, otherwise show sun icon -->
+                     <Icon v-if="!isDarkMode" icon="line-md:moon-filled" class="text-5xl text-primary" />
+                     <Icon v-else icon="line-md:sunny-outline" class="text-5xl text-secondary" />
+                </button>
             </nav>
 
 
-            <button @click="toggleDarkMode" class="text-white ml-20 z-10 hidden md:block">
-                <!-- Show moon icon if dark mode is off, otherwise show sun icon -->
-                 <Icon v-if="!isDarkMode" icon="line-md:moon-filled" class="text-5xl text-primary" />
-                 <Icon v-else icon="line-md:sunny-outline" class="text-5xl text-secondary" />
-            </button>
 
         </div>
     </header>
